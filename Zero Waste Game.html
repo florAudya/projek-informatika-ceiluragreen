@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<!-- saved from url=(0031)https://phoenixaz.recycle.game/ -->
+<html lang="en-US" class=" cssvwunit cssanimations csspseudoanimations no-touchevents" style="font-size: 109.689px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Zero Waste Game</title>
+  <link rel="stylesheet" type="text/css" href="./Zero Waste Game_files/main.v5.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <meta property="og:url" content="https://recollect.net/sorting-game/phoenixaz/">
+  <meta property="og:title" content="Zero Waste Game">
+  <meta property="og:description" content="Learn about Phoenix&#39;s recycling programs in a fun way with our brand new Zero Waste sorting game. Sort materials correctly and win fun items to build your own digital park!">
+  <meta property="og:image" content="./dist/images/cities/phoenixaz/preview.png">
+  <meta name="description" content="Learn about Phoenix&#39;s recycling programs in a fun way with our brand new Zero Waste sorting game. Sort materials correctly and win fun items to build your own digital park!">
+
+  <!--[if lte IE 9 ]>
+  <script>
+  alert("Our apologies. This game may not completely work in your browser. If possible, upgrade to the latest Internet Explorer, or try Chrome or Firefox.  ");
+  </script>
+  <![endif]-->
+</head>
+<body class="scene-start phoenixaz lang-en-US bg-ready"><div id="fontdetectHelper" style="position: absolute; visibility: hidden; top: -200px; left: -100000px; width: 100000px; height: 200px; font-size: 100px;"><span style="font-family: Thump, fantasy;">abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ</span></div>
+  <div class="orientation-warning hide">
+    <div class="device-orientation">
+      <div class="orientation-wrong-hand"></div>
+      <div class="orientation-device"></div>
+      <div class="orientation-wrong-fingers"></div>
+      <div class="orientation-correct"></div>
+      <div class="orientation-correct-checkmark"></div>
+    </div>
+  </div>
+  <button aria-label="Mute" id="mute" data-is-muted="false" aria-pressed="false">
+    <i class="mute-icon"></i>
+  </button>
+  <header>
+    <a href="https://www.phoenix.gov/" class="link" aria-label="Back to main site"><div class="logo">Zero Waste Game</div></a>
+    <div class="title">Zero Waste Game</div>
+    <nav>
+      <button class="quit button" data-navigate="start">Quit Game</button>
+    </nav>
+  </header>
+  <main class="stage">
+    <span id="gameStatus" class="visually-hidden" aria-live="polite">Place item:</span>
+    <section class="scene start active">
+      <div class="sun"></div>
+      <div class="start-title">
+        <a href="https://www.phoenix.gov/" class="link" aria-label="Back to main site"><img class="logo" alt="" src="./Zero Waste Game_files/logo.svg"></a>
+        <div class="title">
+          <h1 class="name" style="font-size: 0.72rem; line-height: 0.77rem;">Zero Waste Game</h1>
+          <span class="description" style="font-size: 0.2rem; line-height: 0.25rem;"></span>
+        </div>
+      </div>
+      <div><button class="button bigger js-stat-start" id="playButton" data-navigate="choose">Play Now!</button></div>
+      <div><button class="button" data-navigate="about">About the game</button></div>
+      <div><div role="region" class="languages js-language-picker-mini" aria-label="Language selection"><a class="button smaller" lang="es" href="https://phoenixaz.recycle.game/es/">Español</a></div></div>
+      <div><button class="button" data-navigate="locale"><img src="./Zero Waste Game_files/language-reversed.svg" class="locale"><span class="visually-hidden">Switch Language</span></button></div>
+      <button class="exit hide">Exit Game</button>
+    </section>
+
+    <section class="scene locale">
+      <div>
+        <div role="region" class="languages js-language-picker" aria-label="Language selection"></div>
+        <button class="button smaller" data-navigate="start">←</button>
+      </div>
+    </section>
+
+    <section class="scene about">
+      <h1 class="scene-h1">About the game</h1>
+      <div class="text">
+        <p class="about-text">Learn about Phoenix's recycling programs in a fun way with our brand new Zero Waste sorting game. Sort materials correctly and win fun items to build your own digital park!</p>
+        <p class="disclaimer">On behalf of the City of Phoenix, ReCollect Systems has launched a web analytics program that is used to record non-identifiable information about your game visit. The data collected is aggregated and is not personally identifiable. IP addresses are masked so that they cannot be used to identify individuals. Our web analytics will also respect any “do not track” settings you might have set on your browser.</p>
+      </div>
+      <button class="button" data-navigate="start">Done</button>
+    </section>
+
+    <section class="scene choose">
+      <h1 class="scene-h1">Choose a Level</h1>
+      <div class="levels">
+        <button class="button level" data-navigate="sort" data-level="1">Level 1</button>
+        <button class="button level" data-navigate="sort" data-level="1">Level 2</button>
+        <button class="button level" data-navigate="sort" data-level="2">Level 3</button>
+        <button class="button level" data-navigate="sort" data-level="2">Level 4</button>
+        <button class="button level" data-navigate="sort" data-level="3">Level 5</button>
+      </div>
+    </section>
+
+    <section class="scene sort show-help" tabindex="-1">
+      <div class="sun"></div>
+
+      <div class="stars">
+      </div>
+
+      <div class="counter" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="6">
+      <div class="progress"></div><div class="progress"></div><div class="progress"></div><div class="progress"></div><div class="progress"></div><div class="progress"></div></div>
+
+      <div id="materialLabel" tabindex="-1"><h1 class="material-label"></h1></div>
+
+
+      <div class="streams has-left stream-3">
+        <button class="position position-left arrow-position-left thrift-store-depot" aria-labelledby="leftLabel">
+          <div class="stream thrift-store-depot">
+            <span id="leftLabel" class="label">Donation Center</span>
+          </div>
+        </button>
+        <div class="main-positions"><button class="position position-cart-tan-all"><div class="stream cart-tan-all"><div id="cart-tan-allLabel" class="label">Green Organics</div></div></button><button class="position position-cart-black"><div class="stream cart-black"><div id="cart-blackLabel" class="label">Landfill</div></div></button><button class="position position-cart-blue-all"><div class="stream cart-blue-all"><div id="cart-blue-allLabel" class="label">Recycle</div></div></button></div>
+        <button class="position position-right hide arrow-position-right" aria-labelledby="rightLabel">
+          <div class="stream">
+            <span id="rightLabel" class="label">
+          </span></div>
+        </button>
+      </div>
+
+      <div class="next-material">
+      </div>
+
+
+      <button class="button hide" data-navigate="place">Continue</button>
+    </section>
+
+    <section class="scene place">
+      <div class="sun"></div>
+
+      <div class="reward-options reveal-from-top place-help">
+        <h1 id="placeHeader" class="scene-h1" tabindex="-1">Add a Reward to Your Park</h1>
+        <span id="placeStatus" class="visually-hidden" aria-live="polite"></span>
+      </div>
+      <div class="people people-back"></div>
+      <div class="reward-placed"></div>
+      <div class="people people-front"></div>
+      <div class="share-sheet hide reveal-from-top" aria-hidden="true" tabindex="-1">
+        <div class="toggle reveal-from-top">
+          <h1>Share <span class="title">'Zero Waste Game'</span></h1>
+          <div class="shares">
+            <a target="_blank" class="share-twitter" aria-label="Share on Twitter - opens in a new window" href="http://twitter.com/intent/tweet?text=What%20goes%20where%3F%20Test%20your%20waste%20sorting%20knowledge%20and%20build%20a%20dream%20park%20with%20Zero%20Waste%20Game%20at%20https%3A%2F%2Frecollect.net%2Fsorting-game%2Fphoenixaz%2F.">
+              <div class="share twitter">Twitter</div>
+            </a>
+            <a target="_blank" class="share-facebook" aria-label="Share on Facebook - opens in a new window" href="http://www.facebook.com/sharer/sharer.php?u=https://recollect.net/sorting-game/phoenixaz/&amp;amp;title=What%20goes%20where%3F%20Test%20your%20waste%20sorting%20knowledge%20and%20build%20a%20dream%20park%20with%20Zero%20Waste%20Game%20at%20https%3A%2F%2Frecollect.net%2Fsorting-game%2Fphoenixaz%2F.">
+              <div class="share facebook">Facebook</div>
+            </a>
+            <a class="share-email" aria-label="Share with email" href="mailto:?subject=Have%20you%20tried%20Zero%20Waste%20Game%3F?&amp;body=I%20wanted%20to%20show%20you%20Zero%20Waste%20Game%2C%20where%20you%20test%20your%20knowledge%20about%20where%20waste%20goes%20and%20in%20the%20process%20build%20a%20cool%20park.%20Give%20it%20a%20try%3A%20https%3A%2F%2Frecollect.net%2Fsorting-game%2Fphoenixaz%2F.">
+              <div class="share email">Email</div>
+            </a>
+          </div>
+          <button class="button quit" data-navigate="start">Play Again</button>
+          <button class="button pull-cord"></button>
+        </div>
+      </div>
+      <div class="contest-sheet hide reveal-from-top" aria-hidden="true" tabindex="-1">
+        <div class="toggle reveal-from-top">
+          <h1>You did it!</h1>
+          <h2>Would you like to enter the contest?</h2>
+          <button class="button contest-done">No</button>
+          <a href="https://phoenixaz.recycle.game/#" target="_blank" class="button contest-done contest-yes">Yes!</a>
+        </div>
+      </div>
+      <div class="certificate-sheet hide reveal-from-top" aria-hidden="true" tabindex="-1">
+        <div class="toggle reveal-from-top">
+          <h1>You earned a certificate!</h1>
+          <div class="certificate">
+            <h3 class="title">Zero Waste Game</h3>
+            <h2 class="achievement">Certificate of Achievement</h2>
+            <input id="nameInput" type="text" placeholder="Add Your Name" aria-label="Add Your Name">
+            <div class="flex-row">
+              <div class="flex-row__left">
+                <h2 class="amount">{number} waste items &lt;span&gt;successfully sorted on&lt;/span&gt; {date}</h2>
+              </div>
+              <div class="flex-row__right">
+                <h4>Certified by <span class="visually-hidden"></span></h4>
+                <div class="logo-text"><img class="logo-img" alt=""></div>
+              </div>
+            </div>
+            <div class="award top-left">
+              <img class="star" src="./Zero Waste Game_files/certificate-star.svg" alt="">
+              <img class="reward" alt="">
+            </div>
+            <div class="award top-right">
+              <img class="star" src="./Zero Waste Game_files/certificate-star.svg" alt="">
+              <img class="stream" alt="">
+            </div>
+            <div class="award bottom-left">
+              <img class="star" src="./Zero Waste Game_files/certificate-star.svg" alt="">
+              <img class="stream" alt="">
+            </div>
+            <div class="award bottom-right">
+              <img class="star" src="./Zero Waste Game_files/certificate-star.svg" alt="">
+              <img class="reward" alt="">
+            </div>
+            <div class="border-top">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+            </div>
+            <div class="border-bottom">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+            </div>
+            <div class="border-left">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img class="only-print" src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img class="only-print" src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+            </div>
+            <div class="border-right">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img class="only-print" src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+              <img class="only-print" src="./Zero Waste Game_files/certificate-border-dot.svg" alt="">
+            </div>
+          </div>
+          <button class="button print">Print</button>
+          <button class="button print-done">Done</button>
+        </div>
+      </div>
+      <button class="button finish hide">Finish</button>
+      <button class="button continue hide" data-navigate="choose">Continue</button>
+    </section>
+
+  </main>
+  <script async="" src="./Zero Waste Game_files/pendo.js.download"></script><script id="reward" type="text/template">
+    <button class="slot">
+      <div class="reward reward-<%= id %> <%= size %>" style="background-image: url(./<%= file %>);" aria-label="<%= id.replace('-',' ') %>"></div>
+    </button>
+  </script>
+  <script type="text/javascript">
+    recollect = { lang: "en-US", baseURL: "./", apiBaseURL: "https://api.ca.recollect.net/v2/areas/phoenixaz/", customer_name: "phoenixaz" };
+  </script>
+  <script type="text/javascript" src="./Zero Waste Game_files/main.v5.js.download"></script>
+
+
+</body></html>
